@@ -1,8 +1,8 @@
 #include <bits/stdc++.h>
-#include <functional>
-#include <string>
 #define rep(i, n) for (int i = 0; i < (n); ++i)
 using namespace std;
+using ll = long long;
+using P = pair<int, int>;
 
 int main()
 {
@@ -18,7 +18,7 @@ int main()
             if (l[i] == l[j]) continue;
             if (l[i] == l[k]) continue;
             if (l[k] == l[j]) continue;
-            if (l[i] + l[j] + l[k] <= max({l[i], l[j], l[k]}) * 2) continue;
+            if ((ll)l[i] + l[j] + l[k] <= max({l[i], l[j], l[k]}) * 2) continue;
             ans++;
         }
     }
