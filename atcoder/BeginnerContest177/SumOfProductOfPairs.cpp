@@ -6,23 +6,25 @@ using namespace std;
 
 int main()
 {
-    long N = 0;
+    int N = 0;
     cin >> N;
-    long A[N];
-    long max = 0;
+    vector<int> A(N);
+    long long sum = 0;
     long result = 0;
-    long m = 1000000000 + 7;
-    for (long i = 0 ; i < N; i++) {
+    long m = 1000000007;
+    for (int i = 0 ; i < N; i++) {
         std::cin >> A[i];
+        sum += A[i];
+        sum %= m;
     }
 
-    for (long j = 0 ; j < N; j++) {
-        for (long k = 0 ; k < N; k++) {
-            if (j < k) {
-                result += A[j] * A[k];
-            }
-        }
+    for (int j = 0 ; j < N; j++) {
+        sum -= A[j];
+        if (sum < 0) sum += m;
+
+        result += A[j] * sum; 
+        result %= m;
     }
 
-    cout << result % m << endl;
+    cout << result << endl;
 }
