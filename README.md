@@ -1,2 +1,2 @@
 # cpp-study
-c++のサンプルプログラムです
+sample program of c++
