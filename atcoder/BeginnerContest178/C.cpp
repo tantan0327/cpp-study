@@ -3,33 +3,23 @@
 #include <cmath>
 
 using namespace std;
+typedef long long ll;
+const ll mod=1000000007;
+
+ll powmod(ll x,ll y){
+    ll res=1;
+    for(ll i=0;i<y;i++){
+        res=res*x%mod;
+    }
+    return res;
+}
 
 int main()
 {
-    int N = 0;
+    ll N = 0;
     cin >> N;
-    vector<int> A(N);
-    long m = 1000000007;
-    long result = 10;
-    if(N==1) {
-        cout << 0 << endl;
-    }
-
-    if (N==2) {
-        cout << 2 << endl;
-    }
-    for (int i = 2 ; i < N; i++) {
-        result = result * 10;
-    }
-
-
-    for (int j = 0 ; j < N; j++) {
-        sum -= A[j];
-        if (sum < 0) sum += m;
-
-        result += A[j] * sum; 
-        result %= m;
-    }
-
-    cout << result << endl;
+    ll ans = powmod(10, N) - powmod(9, N) - powmod(9, N) + powmod(8, N);
+    ans %= mod;
+    ans = (ans+mod)%mod;
+    cout << ans << endl;
 }
