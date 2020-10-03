@@ -14,18 +14,19 @@ int main()
     cin >> n >> s;
     for(int i=0; i < n; i++) {
         for(int j=2; j <= n - i; j=j+2) {
-            a_count, c_count, g_count, t_count = 0;
+            a_count=0;
+            c_count=0;
+            g_count=0;
+            t_count=0;
             string t = s.substr(i, j);
             for (char& c : t) {
                 if (c == 'G') {
                     g_count++;
                     continue;
-                }
-                if (c == 'C'){
+                } else if (c == 'C'){
                     c_count++;
                     continue;
-                }
-                if (c == 'T'){
+                } else if (c == 'T'){
                     t_count++;
                     continue;
                 }
