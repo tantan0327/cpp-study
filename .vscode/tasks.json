@@ -3,10 +3,11 @@
         {
             "type": "shell",
             "label": "C/C++: cpp build active file",
-            "command": "/usr/bin/cpp",
+            "command": "/usr/bin/g++",
             "args": [
                 "-g",
                 "${file}",
+                "-std=c++17",
                 "-o",
                 "${fileDirname}/${fileBasenameNoExtension}"
             ],
