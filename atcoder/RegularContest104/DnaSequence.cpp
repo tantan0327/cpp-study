@@ -1,41 +1,26 @@
 #include <bits/stdc++.h>
-#include <iostream>
-#include <string>
- 
 using namespace std;
  
-int main()
-{
-    int n;
-    string s;
-    int a_count, c_count, g_count, t_count;
-    int result = 0;
- 
-    cin >> n >> s;
-    for(int i=0; i < n; i++) {
-        for(int j=2; j <= n - i; j=j+2) {
-            a_count=0;
-            c_count=0;
-            g_count=0;
-            t_count=0;
-            string t = s.substr(i, j);
-            for (char& c : t) {
-                if (c == 'G') {
-                    g_count++;
-                    continue;
-                } else if (c == 'C'){
-                    c_count++;
-                    continue;
-                } else if (c == 'T'){
-                    t_count++;
-                    continue;
-                }
-            }
-            if ((t.length() - g_count - c_count - t_count) == t_count && c_count == g_count) {
-                result++;
-            }
+int main() {
+    int N;
+    string S;
+    cin >> N >> S;
+    int ans = 0;
+    for (int i = 0; i < N; ++i) {
+        int c1 = 0, c2 = 0;
+        for (int j = i; j < N; ++j) {
+            if (S[j] == 'A')
+                c1++;
+            else if (S[j] == 'T')
+                c1--;
+            else if (S[j] == 'C')
+                c2++;
+            else
+                c2--;
+            if (c1 == 0 && c2 == 0) ans++;
         }
     }
-    cout << result << endl;
+    cout << ans << endl;
  
+    return 0;
 }
