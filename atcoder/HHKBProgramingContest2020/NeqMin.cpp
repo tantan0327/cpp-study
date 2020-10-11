@@ -1,5 +1,6 @@
 #include <bits/stdc++.h>
 using namespace std;
+int t[210000];
  
 int main() {
     int a;scanf("%d",&a);
