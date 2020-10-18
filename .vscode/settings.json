@@ -11,6 +11,8 @@
         "ostream": "cpp",
         "regex": "cpp",
         "*.tcc": "cpp",
-        "iosfwd": "cpp"
+        "iosfwd": "cpp",
+        "string": "cpp",
+        "iostream": "cpp"
     },
 }
