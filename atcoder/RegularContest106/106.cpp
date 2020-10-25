@@ -4,29 +4,18 @@ using namespace std;
 int main() {
     long N;
     cin >> N;
-    long threes = 0;
-    long fives = 0;
-    long temp = 0;
-    for (long i = 1; i < N; i*=5L) {
-        temp = (long) N - i;
-        if (temp == 1) {
-            cout << 0 << " " << fives << endl;
-            return 0;
-        }
-        while (temp != 1) {
-            if (temp % 3L == 0) {
-                temp /= 3L;
-                threes++;
-                if (temp == 1) {
-                    cout << threes << " " << fives << endl;
-                    return 0;
-                }
-            } else {
-                break;
+    long fives = 5;
+    long threes = 3;
+    for (long i = 1; i <= 37; ++i) {
+        for (long j = 1; j <= 25; ++j) {
+            if (threes == N - fives) {
+                cout << i << " " << j << endl;
+                return 0;
             }
+            fives *= 5L;
         }
-        threes=0;
-        fives++;
+        fives = 5;
+        threes *= 3L;
     }
     cout << -1 << endl;
     return 0;
