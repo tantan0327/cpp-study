@@ -17,6 +17,7 @@
         "vector": "cpp",
         "__locale": "cpp",
         "functional": "cpp",
-        "ios": "cpp"
+        "ios": "cpp",
+        "algorithm": "cpp"
     },
 }
