@@ -2,14 +2,20 @@
     "tasks": [
         {
             "type": "shell",
-            "label": "C/C++: cpp build active file",
-            "command": "/usr/bin/g++",
+            // "label": "C/C++: cpp build active file",
+            "label": "test_atcoder_sample",
+            // "command": "/usr/bin/g++",
+            "command": "${workspaceFolder}/atcoder/onlinejudge/cptest.sh",
+            // "args": [
+            //     "-g",
+            //     "${file}",
+            //     "-std=c++17",
+            //     "-o",
+            //     "${fileDirname}/${fileBasenameNoExtension}"
+            // ],
             "args": [
-                "-g",
-                "${file}",
-                "-std=c++17",
-                "-o",
-                "${fileDirname}/${fileBasenameNoExtension}"
+                "${relativeFileDirname}_${fileBasenameNoExtension}", 
+                "${file}"
             ],
             "options": {
                 "cwd": "${workspaceFolder}"
