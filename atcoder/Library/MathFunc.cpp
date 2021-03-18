@@ -89,7 +89,17 @@ bool coprime(int a, int b) {
         return true;
     else
         return false;      
-} 
+}
+
+// 8進数に変換
+string to_oct(int n){
+    string s;
+    while(n){
+        s = to_string(n%8) + s;
+        n /= 8;
+    }
+    return s;
+}
 
 
 int main() {
