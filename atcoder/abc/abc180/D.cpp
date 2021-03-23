@@ -3,9 +3,9 @@
 #include <string>
 using namespace std;
 using ll = long long;
-
+ 
 ll x, y, a, b, s;
-
+ 
 int main()
 {
     cin >> x >> y >> a >> b;
