@@ -1,6 +1,6 @@
 {
     "code-runner.executorMap": {
-        "cpp": "cd $dir && g++-10 -std=c++17 $fileName -o $fileNameWithoutExt && ./$fileNameWithoutExt",
+        "cpp": "cd $dir && g++-11 -std=c++17 $fileName -o $fileNameWithoutExt && ./$fileNameWithoutExt",
     },
     "code-runner.clearPreviousOutput": true,
     "code-runner.runInTerminal": true,
@@ -103,6 +103,15 @@
         "numbers": "cpp",
         "ranges": "cpp",
         "span": "cpp",
-        "stop_token": "cpp"
+        "stop_token": "cpp",
+        "__errc": "cpp",
+        "__node_handle": "cpp",
+        "barrier": "cpp",
+        "coroutine": "cpp",
+        "latch": "cpp",
+        "semaphore": "cpp",
+        "source_location": "cpp",
+        "syncstream": "cpp"
     },
+    "C_Cpp.errorSquiggles": "Disabled",
 }
