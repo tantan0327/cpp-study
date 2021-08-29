@@ -12,29 +12,51 @@ int main()
     int N, M;
     cin >> N >> M;
     
-    int k[M];
+    // colors of ball which is able to be removed
+    queue<int> que;
 
-    vector<queue<int>> queues;
-    bool ans = false;
+    vector<queue<int>> A(M);
+
+    // note each ball is in which queue(max size of each vector should be 2)
+    vector<vector<int>> mem(N);
 
     for (int i = 0; i < M; i++) {
-        cin >> k[i];
-        int a[k[i]];
-        queue<int> q;
-        for (int j = 0; j < k[i]; j++) {
-            cin >> a[j];
-            q.push(a[j]);
+        int k;
+        cin >> k;
+        for (int j = 0; j < k; j++) {
+            int a;
+            cin >> a;
+            A[i].push(a - 1);
         }
-        queues.push_back(q);
+        mem[A[i].front()].push_back(i);
     }
 
-    // execute
+    for (int i = 0; i < N; i++) {
+        if (mem[i].size() == 2) {
+            que.push(i);
+        }
+    }
 
+    while(!que.empty()) {
+        int now = que.front();
+        que.pop();
+        for (auto p : mem[now]) {
+            A[p].pop();
+            if (!A[p].empty()) {
+                mem[A[p].front()].push_back(p);
+                if (mem[A[p].front()].size() == 2) {
+                    que.push(A[p].front());
+                }
+            }
+        }
+    }
 
+    for (auto p : A) {
+        if (!p.empty()) {
+            cout << "No" << endl;
+            return 0;
+        }
+    }
 
-
-
-
-
-    cout << "ans" << endl;
+    cout << "Yes" << endl;
 }
