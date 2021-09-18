@@ -111,7 +111,8 @@
         "latch": "cpp",
         "semaphore": "cpp",
         "source_location": "cpp",
-        "syncstream": "cpp"
+        "syncstream": "cpp",
+        "filesystem": "cpp"
     },
     "C_Cpp.errorSquiggles": "Disabled",
 }
